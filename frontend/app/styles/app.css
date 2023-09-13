@@ -1,0 +1,13 @@
+/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+.toast-success {
+  background-color: green !important;
+  color: aliceblue !important;
+}
+
+.toast-close-button {
+  color: black !important;
+}
+
+.toast-message {
+  color: black !important;
+}

@@ -1,0 +1,16 @@
+<h2 class="mt-4">Student General Average Per Quarter</h2>
+<hr>
+<div class="form-group mt-4 mb-2">
+    {{#if @model}}
+    <label for="selectName">Please select the name</label>
+    <select id="selectName" class="form-select" style="width: 200px;" {{action 'updateId' }}>
+        {{#each @model as |result|}}
+        <option value={{result.id}}>{{result.name}}</option>
+        {{/each}}
+    </select>
+    {{chart data=this.data name=this.name dataId=this.dataId}}
+    {{else}}
+    <h4 class="mt-4">There is no data. Please add a student.</h4>
+    {{/if}}
+
+</div>

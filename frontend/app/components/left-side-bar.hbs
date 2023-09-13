@@ -1,0 +1,59 @@
+{{!-- left side bar component --}}
+<nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="height:760px">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="fs-4">Student App</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <LinkTo @route="dashboard" class="nav-link text-white d-flex align-items-center" aria-current="page">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24"
+                        fill="#ffffff" class="mercado-match" width="24" height="24" focusable="false">
+                        <path d="M23 9v2h-2v7a3 3 0 01-3 3h-4v-6h-4v6H6a3 3 0 01-3-3v-7H1V9l11-7z"></path>
+                    </svg>
+                    <div class="ms-2">Home</div>
+                </LinkTo>
+            </li>
+            <hr>
+            <li>
+                <LinkTo @route="create-student" class="nav-link text-white d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24"
+                        fill="#ffffff" class="mercado-match" width="24" height="24" >
+                        <path d="M21 13h-8v8h-2v-8H3v-2h8V3h2v8h8z"></path>
+                    </svg>
+                    <div class="ms-2">Add student</div>
+                </LinkTo>
+            </li>
+            <hr>
+            <li>
+                <button class="nav-link text-white btn btn-toggle rounded d-flex align-items-center"
+                    data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true" type="button" style="margin-left: 2px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ffffff">
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                    </svg>
+                    <div class="ms-2">Statistics</div>
+                </button>
+                <div class="collapse show" id="dashboard-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal small ms-4">
+                        <li>
+                            <LinkTo @route="student-general-average" class="nav-link text-white">student general chart
+                            </LinkTo>
+                        </li>
+                        <li>
+                            <LinkTo @route="subject-grades" class="nav-link text-white">subject grades chart</LinkTo>
+                        </li>
+                        <li>
+                            <LinkTo @route="year-quarter-general-average" class="nav-link text-white">year-quarter chart
+                            </LinkTo>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+        </ul>
+        <hr>
+
+    </div>
+
+</nav>

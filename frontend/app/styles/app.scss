@@ -1,0 +1,14 @@
+
+@import "ember-bootstrap/bootstrap";
+// Required
+@import "ember-bootstrap/functions";
+@import "ember-bootstrap/variables";
+@import "ember-bootstrap/mixins";
+
+// Optional - Bootstrapping/Resetting
+@import "ember-bootstrap/root";
+@import "ember-bootstrap/reboot";
+
+// Optional - Everything else
+@import "ember-bootstrap/type";
+@import "ember-bootstrap/buttons";

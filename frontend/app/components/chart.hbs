@@ -1,0 +1,13 @@
+<div class="mt-4">
+    {{#if @data}}
+    <button id="rendcolumn" type="button" class="btn btn-primary" {{action 'renderColumn' }}>Column chart</button>
+    <button id="rendbar" type="button" class="btn btn-primary" {{action 'renderBar' }}>Bar chart</button>
+    <button id="rendline" type="button" class="btn btn-primary" {{action 'renderLine' }}>Line chart</button>
+    <button id="rendarea" type="button" class="btn btn-primary" {{action 'renderArea' }}>Area chart</button>
+    {{/if}}
+</div>
+<br><br>
+<form>
+    <div id="chart-container"></div>
+    <br>
+</form>

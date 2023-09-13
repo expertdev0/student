@@ -1,0 +1,15 @@
+<h2 class="mt-4">Subject Grades Per Quarter</h2>
+<hr>
+<div class="form-group mt-4 mb-2">
+    {{#if @model}}
+    <label for="selectSubject">Please select the subject</label>
+    <select id="selectSubject" class="form-select" style="width: 200px;" {{action 'updateSubject'}}>
+        <option value="mathematics">Math</option>
+        <option value="computer_science">Computer</option>
+        <option value="literature">Literature</option>
+    </select>
+    {{chart data=this.data name=this.name dataId=this.dataId}}
+    {{else}}
+    <h4 class="mt-4">There is no data. Please add a student.</h4>
+    {{/if}}
+</div>

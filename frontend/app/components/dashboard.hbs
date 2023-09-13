@@ -1,0 +1,64 @@
+<h2 class="mt-4">Students list</h2>
+<hr>
+
+{{#if @number}}
+<div class="per-page">
+    <label for="per_page" class="mb-2">Lists per page:</label>
+    <select id="per_page" class="form-select" style="width: 100px;" {{action 'perPageChange' }}>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+    </select>
+</div>
+<table class="table table-hover mt-4">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>Class</th>
+            <th>Year</th>
+            <th>Quarter</th>
+            <th>Mathematics</th>
+            <th>Computer Science</th>
+            <th>Literature</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each this.data as |result|}}
+        <tr>
+            <td>{{result.id}}</td>
+            <td>{{result.name}}</td>
+            <td>{{result.date_of_birth}}</td>
+            <td>{{result.student_class}}</td>
+            <td>{{result.year}}</td>
+            <td>{{result.quarter}}</td>
+            <td>{{result.mathematics}}</td>
+            <td>{{result.computer_science}}</td>
+            <td>{{result.literature}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-end">
+        <li class="page-item">
+            <button id="previousPage" class="page-link" {{action "previousPage" }} aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </button>
+        </li>
+        {{#each this.pageNumbers as |pageNumber|}}
+        <li class="page-item"><button id={{concat "page" pageNumber}} class="page-link" type="button"
+                {{action "goToPage" pageNumber}}>{{pageNumber}}</button></li>
+        {{/each}}
+
+        <li class="page-item">
+            <button id="nextPage" class="page-link" {{action "nextPage" }} aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </button>
+        </li>
+    </ul>
+</nav>
+{{else}}
+<h4 class="mt-4 d-flex">There is no data. Please add a student.</h4>
+{{/if}}

@@ -1,0 +1,32 @@
+<h2 class="mt-4">Subject Grades Per Quarter</h2>
+<hr>
+<div class="form-group mt-4 mb-2">
+    {{#if @model}}
+    <div class="row">
+        <div class="col-sm-3">
+            <label for="selectYear">Please select the year</label>
+            <select id="selectYear" class="form-select" style="width: 200px;" {{action 'updateYear'}}>
+                {{#each @model as |year|}}
+                <option value={{year.year}}>{{year.year}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="col-sm-3">
+            <label for="selectQuarter">Please select the quarter</label>
+            <select id="selectQuarter" class="form-select" style="width: 200px;" {{action 'updateQuarter'}}>
+                <option value="Q1">Q1</option>
+                <option value="Q2">Q2</option>
+                <option value="Q3">Q3</option>
+                <option value="Q4">Q4</option>
+            </select>
+        </div>
+    </div>
+    {{else}}
+    <h4 class="mt-4">There is no data. Please add a student.</h4>
+    {{/if}}
+    {{#if this.status}}
+    <h4 class="mt-4">There is no data.</h4>
+    {{else}}
+    {{chart data=this.data name=this.name dataId=this.dataId}}
+    {{/if}}
+</div>
